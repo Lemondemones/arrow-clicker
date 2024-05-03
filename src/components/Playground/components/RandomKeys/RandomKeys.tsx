@@ -1,6 +1,6 @@
 import { useAppSelector } from "../../../../app/hooks";
-import { ARROW_TREE } from "../../constants";
-import type { Arrows } from "../../types";
+import RandomArrows from "./components/RandomArrows";
+import WelcomeText from "./components/WelcomeText";
 
 export type typeRandomKeysProps = {
   isTimerActive: boolean;
@@ -11,9 +11,7 @@ export default function RandomKeys({ isTimerActive }: typeRandomKeysProps) {
 
   return (
     <div>
-      {state.steps.map((elem) => (
-        <span key={elem.step}>{ARROW_TREE[elem.currentValue as keyof Arrows]}</span>
-      ))}
+      {state.steps.length === 0 ? <WelcomeText isTimerActive={isTimerActive} /> : <RandomArrows />}
     </div>
   );
 }
