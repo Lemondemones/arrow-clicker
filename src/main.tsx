@@ -4,6 +4,7 @@ import "./index.css";
 import { Provider } from "react-redux";
 import { store } from "./app/store";
 import Playground from "./components/Playground/Playground";
+import { StyledEngineProvider } from "@mui/material";
 
 const container = document.getElementById("root");
 
@@ -13,7 +14,9 @@ if (container) {
   root.render(
     <React.StrictMode>
       <Provider store={store}>
-        <Playground />
+        <StyledEngineProvider injectFirst>
+          <Playground />
+        </StyledEngineProvider>
       </Provider>
     </React.StrictMode>
   );

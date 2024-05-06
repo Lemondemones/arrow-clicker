@@ -1,3 +1,9 @@
+import Button from "../../../UI/Button/Button";
+
+import { PlayArrow, Pause } from "@mui/icons-material";
+
+import styles from "./Controls.module.css";
+
 export type ControlsProps = {
   isTimerActive: boolean;
   setIsTimerActive: React.Dispatch<React.SetStateAction<boolean>>;
@@ -8,12 +14,12 @@ export default function Controls({ isTimerActive, setIsTimerActive }: ControlsPr
   const handlePause = () => setIsTimerActive(false);
   return (
     <div>
-      <button onClick={handlePlay} disabled={isTimerActive}>
+      <Button onClick={handlePlay} disabled={isTimerActive} className={styles.button} endIcon={<PlayArrow />}>
         Play
-      </button>
-      <button onClick={handlePause} disabled={!isTimerActive}>
+      </Button>
+      <Button onClick={handlePause} disabled={!isTimerActive} className={styles.button} endIcon={<Pause />}>
         Pause
-      </button>
+      </Button>
     </div>
   );
 }

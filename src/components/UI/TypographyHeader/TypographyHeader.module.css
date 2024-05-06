@@ -1,0 +1,11 @@
+.text {
+  margin: 0;
+  margin-bottom: var(--spacing-medium);
+  font-size: 1.5rem;
+  color: var(--color-gray-dark);
+
+  background: -webkit-linear-gradient(right bottom, #5e56b8, #0adaff, #9e3d9b);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

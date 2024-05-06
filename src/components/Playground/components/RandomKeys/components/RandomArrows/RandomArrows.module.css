@@ -1,11 +1,9 @@
 .iconSuccess {
-  background-color: rgb(30, 240, 30);
+  border: 1px solid var(--color-green) !important;
+  background-color: var(--color-green-light) !important;
 }
 
 .iconUnsuccess {
-  background-color: rgb(229, 23, 23);
-}
-
-.icon {
-  background-color: rgb(194, 195, 195);
+  border: 1px solid var(--color-red-light) !important;
+  background-color: var(--color-red-lighter) !important;
 }

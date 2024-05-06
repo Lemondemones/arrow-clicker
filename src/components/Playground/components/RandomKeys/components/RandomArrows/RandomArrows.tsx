@@ -1,6 +1,8 @@
 import { useAppSelector } from "../../../../../../app/hooks";
+import cn from "classnames";
 
 import styles from "../RandomArrows/RandomArrows.module.css";
+import stylesCommmon from "../../RandomKeys.module.css";
 import { ARROW_TREE } from "../../../../constants";
 
 import type { PlaygroundStepsState } from "../../../../store/types";
@@ -10,19 +12,15 @@ export default function RandomArrows() {
   const state = useAppSelector((state) => state.playground);
 
   const getStylesRandomKeys = (elem: PlaygroundStepsState): string => {
-    if (elem.success && elem.success !== null) {
-      return styles.iconSuccess;
-    }
-
-    if (!elem.success && elem.success !== null) {
-      return styles.iconUnsuccess;
-    }
-
-    return styles.icon;
+    return cn(
+      elem.success && elem.success !== null && styles.iconSuccess,
+      !elem.success && elem.success !== null && styles.iconUnsuccess,
+      stylesCommmon.icon
+    );
   };
 
   return (
-    <div>
+    <div className={stylesCommmon.wrapper}>
       {state.steps.map((elem) => (
         <span key={elem.step} className={getStylesRandomKeys(elem)}>
           {ARROW_TREE[elem.currentValue as keyof TArrows]}
