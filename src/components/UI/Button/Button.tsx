@@ -12,8 +12,7 @@ export default function Button(props: IButtonProps) {
       variant="contained"
       size="small"
       {...props}
-      className={cn(styles.button, props.className)}
-    >
+      className={cn(styles.button, props.className)}>
       {props.children}
     </MaterialButton>
   );
